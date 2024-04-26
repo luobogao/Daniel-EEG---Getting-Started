@@ -1,0 +1,25 @@
+Brain Vision Data Exchange Marker File, Version 1.0
+[Common Infos]
+Codepage=UTF-8
+DataFile=EEG HRFK1 DMI Aug 20 1509.eeg
+
+[Marker Infos]
+Mk2=Event,Red Dot,30000,1,0
+Mk3=Event,Wide and Peaceful,139500,1,0
+Mk4=Event,Fruition,200000,1,0
+Mk5=Event,Afterglow,210000,1,0
+Mk6=Event,Fruition,248500,1,0
+Mk7=Event,Afterglow,256500,1,0
+Mk8=Event,Jhana 5,270000,1,0
+Mk9=Event,Fruition,401000,1,0
+Mk10=Event,Afterglow,406500,1,0
+Mk11=Event,Fruition,433000,1,0
+Mk12=Event,Afterglow,444000,1,0
+Mk13=Event,Fruition,500500,1,0
+Mk14=Event,Fruition,531500,1,0
+Mk15=Event,Jhana 1,610500,1,0
+Mk16=Event,Fruition,647000,1,0
+Mk17=Event,Afterglow,660000,1,0
+Mk18=Event,Fruition,705000,1,0
+Mk19=Event,Pure Land 1,791000,1,0
+Mk20=Event,Pure Land 2,822000,1,0

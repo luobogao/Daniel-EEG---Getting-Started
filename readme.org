@@ -1,0 +1,61 @@
+* Overview
+It is extremely easy to dive into this data using Python. The Cognionic system saves a collection of files in an industry-standard format which includes an EEG file, a VHDR file, and a VMRK file. The Python library "MNE" is designed to load this file type. After loading, we will look at a quick plot of the data, then explore various ways to analyze the data.
+
+* File types
+.EEG : contains the voltages from each sensor at every recording interval. Since the Cognionics records at 500 hz, each row is 2 milliseconds apart in time.
+
+.VHDR : general info about the recording, including the filenames of the EEG and VMRK file. Make sure that the filenames of those are correct (you can manually edit them if not).
+
+.VMRK: timestamped 'events', with a label and time in milliseconds for each event. These have been manually added already, based on the spoken notes Daniel provided in the video recording of the meditation session. Documentation: https://pressrelease.brainproducts.com/markers/
+
+
+* Timestamps file
+Daniel recorded himself during this EEG recording, speaking his observations while trying to move as little as possible. The Timestamps CSV file includes his observations with timestamps aligned with the EEG recording.
+
+* Fruitions
+The main focus of our investiation are "fruitions", brief but highly significant experiences. These are labelled "fruitions" in the CSV. Fruitions only last a few moments, so getting the exact right timestamp is critical.
+
+Luckily, fruitions cause Daniel to squint quickly - this shows up as a spike on the EEG data. Unfortuantely, this muscle movement also hides the data from the fruition itself, but we can still learn a lot from the moments immediately before and after the fruition.
+
+* Installation
+
+pip install mne
+
+* Loading data
+
+file_path = "Aug_20.vhdr"
+raw = mne.io.read_raw_brainvision(file_path, preload=True)
+
+# Load the timestamps
+events, event_ids = mne.events_from_annotations(raw)
+
+# Build the chart, using the voltage data and the timestamps
+fig =raw.plot(events=events, event_id=event_ids, block=True)
+
+fig.show()
+
+* Using the Plot
+
+This default plot is already very interesting and helpful, even without any data cleanup or processing into band waves. This chart shows the voltages for each sensor over time, with a scrollable bar at the bottom showing the timestamp in seconds (you can use the arrow keys to scroll). The timestamped events appear as vertical lines.
+
+Daniel indicated a fruition around 8 minutes 17 seconds in the video recording. This is around 490 seconds. Scrolling to that point in the recording, you can see the spike in voltages caused by his eyeblink, indicating exactly when the fruition took place. The huge rise in voltages doesn't have anything to do with "fruition" data itself - this is just a typical case of face movements interfering with the data. It does, however, provide a great indicator of when the fruition takes place.
+
+The data immediately before and after the spike is still valid to use. Something about the nature of this data could be critical to characterize fruitions. Obviously there is a lot going on here - for example, it looks to me like the P4 sensor has a large increase in intensity for 30 seconds before the fruition. This is the kind of escalating change we expect to see for a fruition, which Daniel describes subjectively involves a ramping up of intensity just before.
+
+Characterizing this behavior is the challenge. Electrodes need to be selected, then specific analysis must be chosen to explore these regions of the graphs.
+
+* Further Analysis
+
+
+* Note on VHDR file
+The VHDR file provides all the extra information about the EEG session. MNE loads this file first, which then points to the .EEG file where the data is, and the VMRK file. If the MNE library can't load the data, it could be because the filename of the EEG data is incorrect. The VHDR file can be manually edited to match the filename for the .EEG and .VMRK. For example, if the .EEG file is called "Aug_20.eeg", then the file should look like this at the beginning:
+
+Codepage=UTF-8
+DataFile=Aug_20.eeg
+MarkerFile=Aug_20.vmrk
+DataFormat=BINARY
+DataOrientation=MULTIPLEXED
+DataType=TIMEDOMAIN
+NumberOfChannels=26
+DataPoints=958464
+SamplingInterval=2000

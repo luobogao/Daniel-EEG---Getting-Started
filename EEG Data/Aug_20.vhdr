@@ -1,0 +1,76 @@
+Brain Vision Data Exchange Header File Version 1.0
+
+[Common Infos]
+Codepage=UTF-8
+DataFile=Aug_20.eeg
+MarkerFile=Aug_20.vmrk
+DataFormat=BINARY
+DataOrientation=MULTIPLEXED
+DataType=TIMEDOMAIN
+NumberOfChannels=26
+DataPoints=958464
+SamplingInterval=2000
+
+[Binary Infos]
+BinaryFormat=IEEE_FLOAT_32
+UseBigEndianOrder=NO
+
+[Channel Infos]
+ch1=F7,,1000000,uV
+ch2=Fp1,,1000000,uV
+ch3=Fp2,,1000000,uV
+ch4=F8,,1000000,uV
+ch5=F3,,1000000,uV
+ch6=Fz,,1000000,uV
+ch7=F4,,1000000,uV
+ch8=C3,,1000000,uV
+ch9=Cz,,1000000,uV
+ch10=P8,,1000000,uV
+ch11=P7,,1000000,uV
+ch12=Pz,,1000000,uV
+ch13=P4,,1000000,uV
+ch14=T3,,1000000,uV
+ch15=P3,,1000000,uV
+ch16=O1,,1000000,uV
+ch17=O2,,1000000,uV
+ch18=C4,,1000000,uV
+ch19=T4,,1000000,uV
+ch20=A2,,1000000,uV
+ch21=ExG 1,,1000000,uV
+ch22=ACC21,,1000,mg
+ch23=ACC22,,1000,mg
+ch24=ACC23,,1000,mg
+ch25=Packet Counter,,1,DIGITAL
+ch26=TRIGGER,,1,DIGITAL
+
+
+
+[Comment]
+
+
+Recording Start Time
+2023-08-20 15:09:25.039
+
+
+Channel 	 Name 	 Impedance (kOhm) 	 Offset (mV)
+0 	 F7 	 23 	 -16
+1 	 Fp1 	 22 	 -22
+2 	 Fp2 	 22 	 -22
+3 	 F8 	 28 	 -16
+4 	 F3 	 23 	 -31
+5 	 Fz 	 30 	 -20
+6 	 F4 	 22 	 -25
+7 	 C3 	 31 	 -28
+8 	 Cz 	 25 	 -32
+9 	 P8 	 19 	 -21
+10 	 P7 	 22 	 7
+11 	 Pz 	 48 	 -33
+12 	 P4 	 18 	 -33
+13 	 T3 	 21 	 -13
+14 	 P3 	 20 	 -37
+15 	 O1 	 36 	 -2
+16 	 O2 	 35 	 -15
+17 	 C4 	 36 	 -26
+18 	 T4 	 37 	 -15
+19 	 A2 	 103 	 -743
+20 	 ExG 1 	 32663 	 741
